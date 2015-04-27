@@ -3,7 +3,7 @@ module TaxCloud #:nodoc:
   class Client < Savon::Client
     # Create a new client.
     def initialize
-      super wsdl: TaxCloud::WSDL_URL
+      super ({:wsdl => TaxCloud::WSDL_URL, :ssl_verify_mode => :none})
     end
 
     # Make a safe SOAP call.
